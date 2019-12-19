@@ -1,0 +1,83 @@
+﻿@model IEnumerable<AuthApp.Models.Tasks>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Create New</a>
+</p>
+<div class="col-md-12">
+    <div class="card card-plain">
+        <div class="card-header card-header-success">
+            <h4 class="card-title mt-0"> Tasks</h4>
+            <p> Here is a list of all tasks</p>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered">
+                    <thead class="text-success">
+                    <th>
+                        Priority
+                    </th>
+                    <th>
+                        Module
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Created By
+                    </th>
+                    <th>
+                        Date created
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                    <tbody>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TaskPriority)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TaskModule)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TaskDescription)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TaskStatus)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CreatedBy)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CreatedDate)
+                                        </td>
+                                        <td class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-            haspopup="true" aria-expanded="false">Actions
+                                                </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" asp-action="Edit" asp-route-id="@item.TaskID">Edit</a>
+                                                <a class="dropdown-item" asp-action="Details" asp-route-id="@item.TaskID">Details</a>
+                                                <a class="dropdown-item" asp-action="Delete" asp-route-id="@item.TaskID">Delete</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                </div>
+            </div>
+        </div>
+    </div>

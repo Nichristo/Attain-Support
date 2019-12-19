@@ -1,0 +1,47 @@
+﻿@model AuthApp.Models.Priorities
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="col-md-12">
+        <div class="card card-plain">
+            <div class="card-header card-header-success">
+                <h4 class="card-title mt-0"> New Priority Entry</h4>
+                <p>Enter the details for a new entry</p>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label class="control-label">Priotity</label>
+                                <input asp-for="PriorityName" class="form-control" />
+                                <span asp-validation-for="PriorityName" class="text-danger"></span>
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <label class="control-label">Description</label>
+                                <textarea asp-for="PriorityDescription" class="form-control" />
+                                <span asp-validation-for="PriorityDescription" class="text-danger"></span>
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <input type="submit" value="Create" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div>
+                    <a asp-action="Index">Back to List</a>
+                </div>
+
+                @section Scripts {
+                    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+                }
+            </div>
+        </div>
+</div>

@@ -1,0 +1,73 @@
+﻿@model IEnumerable<AuthApp.Models.Modules>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Create New</a>
+</p>
+<div class="col-md-12">
+    <div class="card card-plain">
+        <div class="card-header card-header-success">
+            <h4 class="card-title mt-0"> Tasks</h4>
+            <p> Here is a list of all tasks</p>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered">
+                    <thead class="text-success">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ModuleName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ModuleDescription)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CreatedBy)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CreatedDate)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Deleted)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ModuleName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ModuleDescription)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Deleted)
+                                </td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.ModuleId">Edit</a> |
+                                    <a asp-action="Details" asp-route-id="@item.ModuleId">Details</a> |
+                                    <a asp-action="Delete" asp-route-id="@item.ModuleId">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

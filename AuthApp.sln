@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
@@ -23,3 +24,30 @@ Global
 		SolutionGuid = {BE396059-256F-4E51-9E67-9ACF363F49FC}
 	EndGlobalSection
 EndGlobal
+=======
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthApp", "AuthApp.csproj", "{64FA86D2-B453-4A58-9038-378A33C1B19A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64FA86D2-B453-4A58-9038-378A33C1B19A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64FA86D2-B453-4A58-9038-378A33C1B19A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64FA86D2-B453-4A58-9038-378A33C1B19A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64FA86D2-B453-4A58-9038-378A33C1B19A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE396059-256F-4E51-9E67-9ACF363F49FC}
+	EndGlobalSection
+EndGlobal
+>>>>>>> ad2b64fcd158eb07bce1a421773853b654019e69
